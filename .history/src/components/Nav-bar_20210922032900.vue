@@ -1,0 +1,158 @@
+<template>
+  <div class="top-bar">
+    <div style="flex-grow: 6" class="action-buttons">
+      <div>
+      </div>
+      <el-badge :value="0">
+      <el-tooltip
+        class="item"
+        effect="dark"
+        content="Wish List"
+        placement="bottom-start"
+      >
+        <el-button
+          class="wish-list-button"
+          icon="el-icon-star-off"
+          type="default"
+        ></el-button>
+      </el-tooltip>
+      </el-badge>
+      <el-tooltip
+        class="item"
+        effect="dark"
+        content="Cart"
+        placement="bottom-start"
+      >
+        <div id="badge-container">
+          <span class="content">Messages</span>
+          <span class="badge">1</span>
+        </div>
+        <p style="position: fixed; bottom: 0; color: white;">Click to the button!</p>
+      </el-tooltip>
+    </div>
+  </div>
+  <el-affix :offset="0">
+    <el-menu
+    :default-active="activeIndex"
+    class="el-menu-demo"
+    mode="horizontal"
+    @select="handleSelect"
+    >
+      <el-menu-item index="1" @click="GoToHome()">
+        HOME
+      </el-menu-item>
+      <el-sub-menu index="2">
+        <template #title>PRODUCT</template>
+        <el-menu-item index="2-1" @click="GoToProducts('men')">MEN</el-menu-item>
+        <el-menu-item index="2-2" @click="GoToProducts('women')">WOMEN</el-menu-item>
+        <el-menu-item index="2-3" @click="GoToProducts('kids')">KIDS</el-menu-item>
+        <el-menu-item index="2-3" @click="GoToProducts('sports')">SPORTS</el-menu-item>
+      </el-sub-menu>
+      <el-menu-item index="3">COLLECTIONS</el-menu-item>
+      <el-menu-item index="4">BRANCH</el-menu-item>
+    </el-menu>
+  </el-affix>
+</template>
+<script lang='ts'>
+import Routes from '../enums/route-names';
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: 'Navbar',
+  methods: {
+    GoToHome(){
+      this.$router.push('/home');
+    },
+    GoToProducts(FilterType){
+      this.$router.push('/products?filter='+FilterType);
+    }
+  },
+  data() {
+    return {
+      Routes
+    }
+  }
+});
+</script>
+<style lang="scss" scoped>
+.top-bar {
+  display: flex;
+  align-items: stretch;
+}
+
+.wish-list-button {
+  margin-right: 10px;
+}
+
+.top-bar > div {
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.logo-container {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.badge-container {
+	min-height: 98vh;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.button {
+	position: relative;
+	border-radius: 4px;
+	border: 2px solid white;
+	padding: 15px 30px;
+	color: white;
+	background: rgba(0,0,0,.1);
+	box-shadow: 0 2px 10px rgba(0,0,0,.15);
+	cursor: pointer;
+	user-select: none;
+	transition: all .3s;
+	
+	&:hover {
+		transform: scale(1.03);
+		background: rgba(0,0,0,.13);
+		box-shadow: 0 2px 20px rgba(0,0,0,.15);
+	}
+	
+	&:active {
+		transform: scale(.96);
+		
+		.badge {
+			transform: scale(1.2);
+		}
+	}
+}
+
+.badge {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	background: rgba(31,206,255,1);
+	border: 2px solid white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: -15px;
+	right: -15px;
+	transition: all .3s;
+}
+</style>

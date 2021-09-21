@@ -1,0 +1,29 @@
+<template>
+    <h5>Display</h5>
+</template>
+<script lang='ts'>
+import { ProductModel } from '../model/product';
+import { defineComponent, PropType } from "vue";
+
+export default defineComponent({
+  name: 'ItemDisplay',
+    props: {
+      user: {
+        type: Object as PropType<ProductModel>,
+        required: true,
+      },
+    },
+  data() {
+    return {
+    }
+  },
+  created() {
+
+  },
+  methods: {
+
+  },
+});
+</script>
+<style scoped>
+</style>

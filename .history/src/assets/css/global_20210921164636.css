@@ -1,0 +1,11 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+    color: #3f444a;
+}
