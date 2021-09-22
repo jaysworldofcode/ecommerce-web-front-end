@@ -1,0 +1,143 @@
+html, body, #page {
+    font-family: 'Inter', sans-serif;
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
+.bold-title {
+    text-align: center;
+    font-size: min(max(2.5vw, 20px), 30px);
+    font-weight: 900;
+    color: #3f444a;
+}
+
+.slight-bold-title {
+    text-align: center;
+    font-size: min(max(2.5vw, 20px), 30px);
+    font-weight: 400;
+    color: #3f444a;
+}
+
+.page-description {
+    margin-left: 40px !important;
+    margin-right: 40px !important;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* BUTTON STYLE GLOBAL */
+
+.custom-button-plain {
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+  
+.custom-button-plain:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.custom-button-border-plain {
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #2EE59D;
+    background-color: white;
+    border: none;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+  
+.custom-button-border-plain:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+
+.el-button .el-button--default .is-plain {
+    background-color: yellow !important;
+}
+
+/* TEXTFIELD STYLE GLOBAL */
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+  }
+
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 14px;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 12px;
+    cursor: text;
+    top: 20px;
+  }
+
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 12px;
+    color: #9b9b9b;
+  }
+
+  .form__field:focus {
+    padding-bottom: 6px;  
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+  }
+
+  .form__field:required{
+    box-shadow:none;
+  }
+  
+  .form__field:invalid {
+    box-shadow:none;
+  }
